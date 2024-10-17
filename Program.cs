@@ -7,7 +7,6 @@ music1.album = "Arise";
 music1.year = 1991;
 
 
-
 Music music2 = new Music();
 
 music2.name = "Escravo da TV";

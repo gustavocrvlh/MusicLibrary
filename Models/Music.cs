@@ -8,10 +8,18 @@ class Music
 
     public void DisplayMusicInfo()
     {
-        Console.WriteLine($"Name: {name}");
-        Console.WriteLine($"Artist: {artist}");
-        Console.WriteLine($"Is Single: {isSingle}");
-        Console.WriteLine($"Album: {album ?? "N/A"}");
-        Console.WriteLine($"Year: {year}");
+        if (isSingle)
+        {
+            Console.WriteLine($"Name: {name} - Single");
+            Console.WriteLine($"Artist: {artist}");
+            Console.WriteLine($"Year: {year}");
+        }
+        else
+        {
+            Console.WriteLine($"Name: {name}");
+            Console.WriteLine($"Artist: {artist}");
+            Console.WriteLine($"Album: {album}");
+            Console.WriteLine($"Year: {year}");
+        }
     }
 }
