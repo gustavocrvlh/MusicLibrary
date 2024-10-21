@@ -17,7 +17,8 @@ music2.IsSingle = true;
 music2.Year = 1989;
 
 music1.DisplayMusicInfo();
-music2.DisplayMusicInfo();
 Console.WriteLine(music1.Description);
+
+music2.DisplayMusicInfo();
 Console.WriteLine(music2.Description);
 
