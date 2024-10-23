@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 class Album
 {
     private List<Music> musics = new List<Music>();
@@ -14,6 +12,7 @@ class Album
 
     public void AddMusic(Music music)
     {
+        music.Album = Name;
         musics.Add(music);
     }
 
@@ -28,7 +27,7 @@ class Album
     public void DisplayAlbumInfo()
     {
 
-
+        Console.WriteLine("");
         Console.WriteLine($"Album Name: {Name}");
         DisplayAlbumDuration(Duration);
 

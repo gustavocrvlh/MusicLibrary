@@ -9,7 +9,7 @@ class Music
     public string Name { get; }
     public Artist Artist { get; }
     public bool IsSingle { get; set; }
-    public string Album { get; set; }
+    public string? Album { get; set; }
     public int ReleaseYear { get; set; }
     public int Duration { get; set; }
 
@@ -32,14 +32,16 @@ class Music
     {
         if (IsSingle)
         {
+            Console.WriteLine("");
             Console.WriteLine($"Name: {Name} - Single");
-            Console.WriteLine($"Artist: {Artist}");
+            Console.WriteLine($"Artist: {Artist.Name}");
             Console.WriteLine($"Year: {ReleaseYear}");
         }
         else
         {
+            Console.WriteLine("");
             Console.WriteLine($"Name: {Name}");
-            Console.WriteLine($"Artist: {Artist}");
+            Console.WriteLine($"Artist: {Artist.Name}");
             Console.WriteLine($"Album: {Album}");
             Console.WriteLine($"Year: {ReleaseYear}");
         }

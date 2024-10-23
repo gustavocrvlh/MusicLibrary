@@ -1,4 +1,3 @@
-
 class Artist
 {
     private List<Album> albums = new List<Album>();
@@ -17,6 +16,7 @@ class Artist
 
     public void ShowAlbuns()
     {
+        Console.WriteLine("");
         Console.WriteLine($"Albums of {Name}:");
         foreach (var album in albums)
         {
