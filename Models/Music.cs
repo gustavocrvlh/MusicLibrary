@@ -1,21 +1,29 @@
 class Music
 {
-    public string Name { get; set; }
-    public string Artist { get; set; }
+    public Music(Artist artist, string name)
+    {
+        Artist = artist;
+        Name = name;
+    }
+
+    public string Name { get; }
+    public Artist Artist { get; }
     public bool IsSingle { get; set; }
     public string Album { get; set; }
-    public int Year { get; set; }
+    public int ReleaseYear { get; set; }
+    public int Duration { get; set; }
+
     public string Description
     {
         get
         {
             if (IsSingle)
             {
-                return $"This is a single named {Name} by {Artist}, release in {Year}.";
+                return $"This is a single named {Name} by {Artist}, release in {ReleaseYear}.";
             }
             else
             {
-                return $"This is a song named {Name} from the album {Album} by {Artist}, released in {Year}.";
+                return $"This is a song named {Name} from the album {Album} by {Artist}, released in {ReleaseYear}.";
             }
         }
     }
@@ -26,14 +34,14 @@ class Music
         {
             Console.WriteLine($"Name: {Name} - Single");
             Console.WriteLine($"Artist: {Artist}");
-            Console.WriteLine($"Year: {Year}");
+            Console.WriteLine($"Year: {ReleaseYear}");
         }
         else
         {
             Console.WriteLine($"Name: {Name}");
             Console.WriteLine($"Artist: {Artist}");
             Console.WriteLine($"Album: {Album}");
-            Console.WriteLine($"Year: {Year}");
+            Console.WriteLine($"Year: {ReleaseYear}");
         }
     }
 }

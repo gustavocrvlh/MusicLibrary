@@ -1,24 +1,25 @@
-﻿
+﻿Artist artist1 = new Artist("Sepultura");
 
-Music music1 = new Music();
+Album album1 = new Album("Arise");
 
-music1.Name = "Dead Embryonic Cells";
-music1.Artist = "Sepultura";
-music1.IsSingle = false;
-music1.Album = "Arise";
-music1.Year = 1991;
+Music music1 = new Music(artist1, "Dead Embryonic Cells")
+{
+    IsSingle = false,
+    ReleaseYear = 1991,
+    Duration = 254
+};
+
+Music music2 = new Music(artist1, "Altered State")
+{
+    IsSingle = true,
+    ReleaseYear = 1991,
+    Duration = 279
+};
 
 
-Music music2 = new Music();
+album1.AddMusic(music1);
+album1.AddMusic(music2);
 
-music2.Name = "Escravo da TV";
-music2.Artist = "Ratos de Porão";
-music2.IsSingle = true;
-music2.Year = 1989;
 
-music1.DisplayMusicInfo();
-Console.WriteLine(music1.Description);
-
-music2.DisplayMusicInfo();
-Console.WriteLine(music2.Description);
-
+artist1.AddAlbum(album1);
+artist1.ShowAlbuns();
