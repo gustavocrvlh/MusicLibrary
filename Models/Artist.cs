@@ -1,6 +1,9 @@
+namespace MusicLibrary.Models;
+
 class Artist
 {
     private List<Album> albums = new List<Album>();
+    private List<int> ratings = new List<int>();
 
     public Artist(string name)
     {
@@ -8,10 +11,17 @@ class Artist
     }
 
     public string Name { get; }
+    public double AverageRating => ratings.Average();
+    public List<Album> Albums => albums;
 
     public void AddAlbum(Album album)
     {
         albums.Add(album);
+    }
+
+    public void RateAlbum(int rating)
+    {
+        ratings.Add(rating);
     }
 
     public void ShowAlbuns()

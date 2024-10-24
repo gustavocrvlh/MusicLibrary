@@ -1,3 +1,5 @@
+namespace MusicLibrary.Models;
+
 class Album
 {
     private List<Music> musics = new List<Music>();
@@ -26,6 +28,8 @@ class Album
 
     public void DisplayAlbumInfo()
     {
+        int minutes = Duration / 60;
+        int seconds = Duration % 60;
 
         Console.WriteLine("");
         Console.WriteLine($"Album Name: {Name}");

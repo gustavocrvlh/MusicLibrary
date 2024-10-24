@@ -1,3 +1,5 @@
+namespace MusicLibrary.Models;
+
 class Music
 {
     public Music(Artist artist, string name)
@@ -19,11 +21,11 @@ class Music
         {
             if (IsSingle)
             {
-                return $"This is a single named {Name} by {Artist}, release in {ReleaseYear}.";
+                return $"The single {Name} by {Artist} was release in {ReleaseYear}.";
             }
             else
             {
-                return $"This is a song named {Name} from the album {Album} by {Artist}, released in {ReleaseYear}.";
+                return $"The song {Name} by {Artist}, from the album {Album} was released in {ReleaseYear}.";
             }
         }
     }
@@ -35,7 +37,7 @@ class Music
             Console.WriteLine("");
             Console.WriteLine($"Name: {Name} - Single");
             Console.WriteLine($"Artist: {Artist.Name}");
-            Console.WriteLine($"Year: {ReleaseYear}");
+            Console.WriteLine($"Released in {ReleaseYear}");
         }
         else
         {
@@ -43,7 +45,7 @@ class Music
             Console.WriteLine($"Name: {Name}");
             Console.WriteLine($"Artist: {Artist.Name}");
             Console.WriteLine($"Album: {Album}");
-            Console.WriteLine($"Year: {ReleaseYear}");
+            Console.WriteLine($"Released in {ReleaseYear}");
         }
     }
 }
