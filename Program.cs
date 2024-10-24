@@ -1,4 +1,9 @@
-﻿Artist artist1 = new Artist("Sepultura");
+using MusicLibrary.Models;
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+Artist artist1 = new Artist("Sepultura");
 
 Album album1 = new Album("Arise");
 
@@ -27,3 +32,5 @@ album1.DisplayAlbumInfo();
 
 music1.DisplayMusicInfo();
 music2.DisplayMusicInfo();
+    }
+}
