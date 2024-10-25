@@ -18,14 +18,6 @@ class Album
         musics.Add(music);
     }
 
-    public void DisplayAlbumDuration(int Duration)
-    {
-        int minutes = Duration / 60;
-        int seconds = Duration % 60;
-
-        Console.WriteLine($"Duration: {minutes} minutes and {seconds} seconds");
-    }
-
     public void DisplayAlbumInfo()
     {
         int minutes = Duration / 60;
@@ -40,5 +32,13 @@ class Album
         {
             Console.WriteLine($"{music.Name}");
         }
+    }
+
+    public void DisplayAlbumDuration(int Duration)
+    {
+        int minutes = Duration / 60;
+        int seconds = Duration % 60;
+
+        Console.WriteLine($"Duration: {minutes} minutes and {seconds} seconds");
     }
 }

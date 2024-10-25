@@ -19,7 +19,7 @@ class Artist
         albums.Add(album);
     }
 
-    public void RateAlbum(int rating)
+    public void RateArtist(int rating)
     {
         ratings.Add(rating);
     }
