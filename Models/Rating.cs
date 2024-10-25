@@ -2,10 +2,10 @@ namespace MusicLibrary.Models;
 
 internal class Rating
 {
-    public Rating(int value)
+    public Rating(int ratingValue)
     {
-        Value = value;
+        RatingValue = ratingValue;
     }
 
-    public int Value { get; }
+    public int RatingValue { get; }
 }

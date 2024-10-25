@@ -3,7 +3,7 @@ namespace MusicLibrary.Models;
 internal class Artist
 {
     private List<Album> albums = new List<Album>();
-    private List<int> ratings = new List<int>();
+    private List<Rating> ratings = new List<Rating>();
 
     public Artist(string name)
     {
@@ -11,7 +11,14 @@ internal class Artist
     }
 
     public string Name { get; }
-    public double AverageRating => ratings.Average();
+    public double AverageRating
+    {
+        get
+        {
+            if (ratings.Count == 0) return 0;
+            else return ratings.Average(r => r.RatingValue);
+        }
+    }
     public List<Album> Albums => albums;
 
     public void AddAlbum(Album album)
@@ -19,7 +26,7 @@ internal class Artist
         albums.Add(album);
     }
 
-    public void RateArtist(int rating)
+    public void RateArtist(Rating rating)
     {
         ratings.Add(rating);
     }

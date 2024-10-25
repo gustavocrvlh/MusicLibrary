@@ -4,14 +4,14 @@ internal class Program
     private static void Main(string[] args)
     {
         Artist artist1 = new Artist("Ira");
-        artist1.RateArtist(10);
-        artist1.RateArtist(8);
-        artist1.RateArtist(6);
+        artist1.RateArtist(new Rating(10));
+        artist1.RateArtist(new Rating(8));
+        artist1.RateArtist(new Rating(6));
 
         Artist artist2 = new Artist("The Beatles");
-        artist2.RateArtist(10);
-        artist2.RateArtist(8);
-        artist2.RateArtist(6);
+        artist2.RateArtist(new Rating(10));
+        artist2.RateArtist(new Rating(8));
+        artist2.RateArtist(new Rating(6));
 
         Dictionary<string, Artist> registeredArtists = new();
         registeredArtists.Add(artist1.Name, artist1);
@@ -121,7 +121,7 @@ internal class Program
                 Artist artist = registeredArtists[artistName];
                 Console.Write($"Give a rating from 0 to 10 to {artistName}: ");
                 int rating = int.Parse(Console.ReadLine()!);
-                artist.RateArtist(rating);
+                artist.RateArtist(new Rating(rating));
                 Console.WriteLine($"\n The rating {rating} was registered to the artist {artistName} successfully!");
                 Thread.Sleep(2000);
                 Console.Clear();
