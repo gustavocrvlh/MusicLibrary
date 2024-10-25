@@ -1,6 +1,6 @@
 namespace MusicLibrary.Models;
 
-class Album
+internal class Album
 {
     private List<Music> musics = new List<Music>();
 

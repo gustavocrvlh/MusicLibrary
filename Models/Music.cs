@@ -1,6 +1,6 @@
 namespace MusicLibrary.Models;
 
-class Music
+internal class Music
 {
     public Music(Artist artist, string name)
     {

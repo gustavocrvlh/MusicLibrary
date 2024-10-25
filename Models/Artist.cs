@@ -1,6 +1,6 @@
 namespace MusicLibrary.Models;
 
-class Artist
+internal class Artist
 {
     private List<Album> albums = new List<Album>();
     private List<int> ratings = new List<int>();
