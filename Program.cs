@@ -1,4 +1,5 @@
 ﻿using MusicLibrary.Models;
+using MusicLibrary.Menus;
 internal class Program
 {
     private static void Main(string[] args)
@@ -33,19 +34,29 @@ internal class Program
             switch (chosenOptionNumber)
             {
                 case 1:
-                    RegisterArtist();
+                    MenuRegisterArtist menu1 = new MenuRegisterArtist();
+                    menu1.Execute(registeredArtists);
+                    DisplayMenuOptions();
                     break;
                 case 2:
-                    RegisterAlbum();
+                    MenuRegisterAlbum menu2 = new MenuRegisterAlbum();
+                    menu2.Execute(registeredArtists);
+                    DisplayMenuOptions();
                     break;
                 case 3:
-                    DisplayRegisteredArtists();
+                    MenuDisplayRegisteredArtists menu3 = new MenuDisplayRegisteredArtists();
+                    menu3.Execute(registeredArtists);
+                    DisplayMenuOptions();
                     break;
                 case 4:
-                    AddArtistRating();
+                    MenuRateArtist menu4 = new MenuRateArtist();
+                    menu4.Execute(registeredArtists);
+                    DisplayMenuOptions();
                     break;
                 case 5:
-                    DisplayArtistDetails();
+                    MenuDisplayArtistDetails menu5 = new MenuDisplayArtistDetails();
+                    menu5.Execute(registeredArtists);
+                    DisplayMenuOptions();
                     break;
                 case -1:
                     break;
@@ -55,115 +66,6 @@ internal class Program
                     break;
             }
         }
-
-        void RegisterAlbum()
-        {
-            Console.Clear();
-            Console.Write("Artist name: ");
-            string artistName = Console.ReadLine()!;
-            if (registeredArtists.ContainsKey(artistName))
-            {
-                Console.Write("Album name: ");
-                string tituloAlbum = Console.ReadLine()!;
-                Artist artist = registeredArtists[artistName];
-                artist.AddAlbum(new Album(tituloAlbum));
-                Console.WriteLine($"The álbum {tituloAlbum} by {artistName} was registered successfully!");
-                Thread.Sleep(4000);
-                Console.Clear();
-            }
-            else
-            {
-                Console.WriteLine("Artist not found");
-                Thread.Sleep(4000);
-                Console.Clear();
-            }
-            DisplayMenuOptions();
-
-        }
-
-        void RegisterArtist()
-        {
-            Console.Clear();
-            Console.Write("Artist name: ");
-            string artistName = Console.ReadLine()!;
-            Artist artist = new Artist(artistName);
-            registeredArtists.Add(artistName, artist);
-            Console.WriteLine($"The artist {artistName} was registered successfully!");
-            Thread.Sleep(4000);
-            Console.Clear();
-            DisplayMenuOptions();
-        }
-
-        void DisplayRegisteredArtists()
-        {
-            Console.Clear();
-
-            foreach (string banda in registeredArtists.Keys)
-            {
-                Console.WriteLine($"Artist: {banda}");
-            }
-
-            Console.WriteLine("\nType any key to return to the main menu");
-            Console.ReadKey();
-            Console.Clear();
-            DisplayMenuOptions();
-
-        }
-
-        void AddArtistRating()
-        {
-            Console.Clear();
-            Console.Write("Artist name: ");
-            string artistName = Console.ReadLine()!;
-
-            if (registeredArtists.ContainsKey(artistName))
-            {
-                Artist artist = registeredArtists[artistName];
-                Console.Write($"Give a rating from 0 to 10 to {artistName}: ");
-                int rating = int.Parse(Console.ReadLine()!);
-                artist.RateArtist(new Rating(rating));
-                Console.WriteLine($"\n The rating {rating} was registered to the artist {artistName} successfully!");
-                Thread.Sleep(2000);
-                Console.Clear();
-            }
-            else
-            {
-                Console.WriteLine($"\n{artistName} was not found!");
-                Console.WriteLine("Type any key to return to the main menu");
-                Console.ReadKey();
-                Console.Clear();
-            }
-            DisplayMenuOptions();
-        }
-
-        void DisplayArtistDetails()
-        {
-            Console.Clear();
-            Console.Write("Artist name ");
-            string artistName = Console.ReadLine()!;
-            if (registeredArtists.ContainsKey(artistName))
-            {
-                Artist artist = registeredArtists[artistName];
-                Console.WriteLine($"\nA média da banda {artistName} é {artist.AverageRating}.");
-                /**
-                * ESPAÇO RESERVADO PARA COMPLETAR A FUNÇÃO
-                */
-                Console.WriteLine("Digite uma tecla para votar ao menu principal");
-                Console.ReadKey();
-                Console.Clear();
-                DisplayMenuOptions();
-
-            }
-            else
-            {
-                Console.WriteLine($"\n {artistName} was not found!");
-                Console.WriteLine("Type any key to return to the main menu");
-                Console.ReadKey();
-                Console.Clear();
-                DisplayMenuOptions();
-            }
-        }
-
         DisplayMenuOptions();
     }
 }
