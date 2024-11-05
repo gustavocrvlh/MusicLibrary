@@ -1,11 +1,11 @@
 using MusicLibrary.Models;
 namespace MusicLibrary.Menus;
 
-internal class MenuRateArtist
+internal class MenuRateArtist : Menu
 {
-    public void Execute(Dictionary<string, Artist> registeredArtists)
+    public override void Execute(Dictionary<string, Artist> registeredArtists)
     {
-        Console.Clear();
+        base.Execute(registeredArtists);
         Console.Write("Artist name: ");
         string artistName = Console.ReadLine()!;
 
@@ -14,7 +14,7 @@ internal class MenuRateArtist
             Artist artist = registeredArtists[artistName];
             Console.Write($"Give a rating from 0 to 10 to {artistName}: ");
             Rating ratingValue = Rating.Parse(Console.ReadLine()!);
-            artist.RateArtist(ratingValue);
+            artist.Rate(ratingValue);
             Console.WriteLine($"\n The rating {ratingValue.RatingValue} was registered to the artist {artistName} successfully!");
             Thread.Sleep(2000);
             Console.Clear();

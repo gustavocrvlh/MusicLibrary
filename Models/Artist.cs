@@ -1,6 +1,6 @@
 namespace MusicLibrary.Models;
 
-internal class Artist
+internal class Artist : IRetable
 {
     private List<Album> albums = new List<Album>();
     private List<Rating> ratings = new List<Rating>();
@@ -26,7 +26,7 @@ internal class Artist
         albums.Add(album);
     }
 
-    public void RateArtist(Rating rating)
+    public void Rate(Rating rating)
     {
         ratings.Add(rating);
     }

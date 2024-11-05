@@ -1,11 +1,10 @@
 using MusicLibrary.Models;
 namespace MusicLibrary.Menus;
-internal class MenuRegisterArtist
+internal class MenuRegisterArtist : Menu
 {
-    public void Execute(Dictionary<string, Artist> registeredArtists)
+    public override void Execute(Dictionary<string, Artist> registeredArtists)
     {
-
-        Console.Clear();
+        base.Execute(registeredArtists);
         Console.Write("Artist name ");
         string artistName = Console.ReadLine()!;
         if (registeredArtists.ContainsKey(artistName))

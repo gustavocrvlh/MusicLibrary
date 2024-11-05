@@ -2,12 +2,11 @@ using MusicLibrary.Models;
 namespace MusicLibrary.Menus;
 
 
-internal class MenuDisplayArtistDetails
+internal class MenuDisplayArtistDetails : Menu
 {
-    public void Execute(Dictionary<string, Artist> registeredArtists)
+    public override void Execute(Dictionary<string, Artist> registeredArtists)
     {
-
-        Console.Clear();
+        base.Execute(registeredArtists);
         Console.Write("Artist name: ");
         string artistName = Console.ReadLine()!;
         Artist artist = new Artist(artistName);
