@@ -51,6 +51,7 @@ internal class Program
                 System.Console.WriteLine("Invalid option!");
             }
         }
+        Console.Clear();
         DisplayMenuOptions();
     }
 }

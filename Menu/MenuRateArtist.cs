@@ -16,6 +16,7 @@ internal class MenuRateArtist : Menu
             Rating ratingValue = Rating.Parse(Console.ReadLine()!);
             artist.Rate(ratingValue);
             Console.WriteLine($"\n The rating {ratingValue.RatingValue} was registered to the artist {artistName} successfully!");
+            Console.WriteLine("Loading menu...");
             Thread.Sleep(2000);
             Console.Clear();
         }

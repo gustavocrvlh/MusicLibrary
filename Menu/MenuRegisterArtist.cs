@@ -10,6 +10,7 @@ internal class MenuRegisterArtist : Menu
         Artist artist = new Artist(artistName);
         registeredArtists.Add(artistName, artist);
         Console.WriteLine($"The artist {artistName} was registered successfully!");
+        Console.WriteLine("Loading menu...");
         Thread.Sleep(4000);
         Console.Clear();
     }

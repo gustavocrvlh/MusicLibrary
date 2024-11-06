@@ -22,6 +22,7 @@ internal class MenuRateAlbum : Menu
                 Rating ratingValue = Rating.Parse(Console.ReadLine()!);
                 album.Rate(ratingValue);
                 Console.WriteLine($"\n The rating {ratingValue.RatingValue} was registered to {albumName} successfully!");
+                Console.WriteLine("Loading menu...");
                 Thread.Sleep(2000);
                 Console.Clear();
             }
