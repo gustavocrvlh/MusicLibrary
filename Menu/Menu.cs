@@ -7,5 +7,4 @@ internal class Menu
     {
         Console.Clear();
     }
-
 }
