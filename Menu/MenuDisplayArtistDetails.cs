@@ -14,6 +14,7 @@ internal class MenuDisplayArtistDetails : Menu
             Console.Clear();
             Artist artist = registeredArtists[artistName];
             Console.WriteLine($"Artist: {artist.Name}");
+            Console.WriteLine(artist.Description);
             Console.WriteLine($"Albums:");
             foreach (Album album in artist.Albums)
             {

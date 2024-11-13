@@ -1,11 +1,12 @@
-﻿using MusicLibrary;
-using MusicLibrary.Models;
+﻿using MusicLibrary.Models;
 using MusicLibrary.Menus;
+
 internal class Program
 {
     private static void Main(string[] args)
     {
-        Artist artist1 = new Artist("Ira");
+
+        Artist artist1 = new Artist("Ira!");
         artist1.Rate(new Rating(10));
         artist1.Rate(new Rating(8));
         artist1.Rate(new Rating(6));
@@ -51,7 +52,6 @@ internal class Program
                 System.Console.WriteLine("Invalid option!");
             }
         }
-        Console.Clear();
         DisplayMenuOptions();
     }
 }

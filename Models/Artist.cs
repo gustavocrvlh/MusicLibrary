@@ -19,6 +19,8 @@ internal class Artist : IRetable
             else return ratings.Average(r => r.RatingValue);
         }
     }
+
+    public string? Description { get; set; }
     public List<Album> Albums => albums;
 
     public void AddAlbum(Album album)
