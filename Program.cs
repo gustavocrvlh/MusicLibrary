@@ -6,6 +6,7 @@ internal class Program
     private static void Main(string[] args)
     {
 
+        // Sample data
         Artist artist1 = new Artist("Ira!");
         artist1.Rate(new Rating(10));
         artist1.Rate(new Rating(8));
